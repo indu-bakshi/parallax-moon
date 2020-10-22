@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section>
+        <img src="./pics/bg.jpg" id="bg">
+        <img src="./pics/moon.png" id="moon">
+        <img src="./pics/mountain.png" id="mountain">
+        <img src="./pics/road2.png" id="road">   
+        <h2 id="text">Let's Travel</h2>
+        <img src="./pics/bus.png" id="bus">
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1410.98 667.37"><defs><style>.cls-1{fill:none;stroke-miterlimit:10;}</style></defs><title>path-road</title><path class="cls-1" id="path" d="M834.5,1187.5s-214-229,313-311c0,0,1039-131,1054-356" transform="translate(-791.02 -520.47)"/></svg>
+    </section>
+   
+
+    <script type="text/javascript">
+    let bg = document.getElementById('bg');
+    let moon = document.getElementById('moon');
+    let mountain = document.getElementById('mountain');
+    let road = document.getElementById('road');
+    let path = document.getElementById('Layer_2');
+    let text = document.getElementById('text');
+
+    window.addEventListener('scroll',function(){
+        var value= window.scrollY;
+
+        bg.style.top=value * 0.5 + 'px';
+        moon.style.left=-value * 0.5 + 'px';
+        mountain.style.top=-value * 0.15 + 'px';
+        // road.style.top=value * 0.15 + 'px';
+        text.style.top=value * 1 + 'px';
+        // path.style.top=value * 0.15 + 'px';
+    })
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/MotionPathPlugin.js"></script>
+    <script src="js/animate.js"></script>
+</body>
+</html>
